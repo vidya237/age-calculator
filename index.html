@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="style.css">
+ 
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body>
+  <main class="main-container bg-white">
+    <div class="container">
+    
+      <span>  
+        <p id="day">Day</p>
+        <input type="text" placeholder="DD" id="inputdate" minlength="1" maxlength="2">
+        <p id="daterror"></p>
+       </span>
+
+       <span>  
+        <p id="month">Month</p>
+        <input type="text" placeholder="MM" id="inputmonth" minlength="1" maxlength="2">
+        <p id="monerror"></p>
+        </span>
+
+       <span>  
+        <p id="year">Year</p>
+        <input type="text" placeholder="YYYY" id="inputyear" minlength="4" maxlength="4">
+        <p id="yerror"></p>
+        </span>
+    </div>
+  </div>
+  <div class="d-grid">
+       <hr class="hr-line mt-5 ms-2" />
+  <img class="arrow bg-black " src="./assets/images/icon-arrow.svg" alt="arrow" onclick="downarrow()">
+</div>
+  <div class="years">
+    <h1><span id="dy">--</span> years</h1> 
+    <h1><span id="dm">--</span> months</h1>
+   <h1><span id="dd1">--</span> days</h1> 
+  </div>
+  </main>  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script>
+    var inputdate = document.getElementById("inputdate");
+    var inputmonth = document.getElementById("inputmonth");
+    var inputyear = document.getElementById("inputyear");
+    
+    function downarrow() {
+    if(inputdate.value == "" || inputdate.value > 31){
+        document.getElementById("daterror").innerHTML = "data is invalid";
+        daterror.style.color = "red";
+        day.style.color = "red";
+      }else{
+      document.getElementById.innerHTML="";
+      }
+      if(inputmonth.value == "" || inputmonth.value > 12){
+        document.getElementById("monerror").innerHTML = "data is invalid";
+        monerror.style.color = "red";
+        month.style.color = "red";
+      }else{
+      document.getElementById.innerHTML="";
+      }
+    if(inputyear.value ==""){
+     document.getElementById("yerror").innerHTML = "data is invalid";
+     yerror.style.color = "red";
+     year.style.color = "red";
+    }else{
+      document.getElementById.innerHTML="";
+      }
+
+      var date = new Date();
+      var newDate = date.getDate();
+      var newMonth =1+ date.getMonth();
+      var newYear = date.getFullYear();
+     var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+     if(inputdate.value > newDate ){
+      newDate = newDate + month[newMonth - 1];
+      newMonth = newMonth -1;
+     }
+
+     if(inputmonth.value > newMonth){
+      newMonth = newMonth +12;
+      newYear = newYear -1;
+     }
+     if(inputdate.value == 0 || inputmonth.value == 0 || inputyear.value == 0){
+      alert ("enter valid input");
+     }
+     var d = newDate - inputdate.value;
+     var m = newMonth - inputmonth.value;
+     var y = newYear - inputyear.value;
+
+     document.getElementById("dy").innerHTML = y;
+     document.getElementById("dm").innerHTML = m;
+     document.getElementById("dd1").innerHTML = d;
+
+
+  }
+  </script>
+</body>
+</html>

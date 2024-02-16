@@ -1,0 +1,63 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,800&family=Roboto:wght@400;500;700;900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+   background-color:hsl(0, 0%, 90%); 
+   margin: auto;
+   width: 100px;
+   
+}
+.main-container{
+    height: 350px;
+    width: 400px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 100px 10px;
+    padding: 30px;
+    position: absolute;
+}
+.container{
+    justify-content: space-between;
+    display: flex;
+    padding-right: 50px;
+}
+.container  input{
+    border: 1px solid rgb(207, 203, 203);
+    border-radius: 3px;
+    background-color: white;
+    width: 60px;
+    padding: 1px 1px 1px 10px;
+    font-size: 14px;font-weight: 700;
+    color: rgb(26, 26, 58);
+}
+
+.container p{
+    font-family: poppins;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+.arrow{
+    border-radius: 50%;
+    top: -95%;
+    margin-left: 315px;
+    position: relative;
+}
+.years span{
+    color: hsl(228, 45%, 44%);
+}
+.years h1{
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+}
+.hr-line{
+   color:solid rgb(207, 203, 203) ; 
+}
